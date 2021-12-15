@@ -35,8 +35,8 @@ class App extends Component {
     ],
   };
   removeHadler = (id) => {
-    const filterd = this.state.products.filter((p) => p.id !== id);
-    this.setState({ products: filterd });
+    const filterd_Id = this.state.products.filter((p) => p.id !== id);
+    this.setState({ products: filterd_Id });
   };
 
   ///////////////////////////////////// Problem is Probably Here /////////////////////////////////
@@ -51,11 +51,11 @@ class App extends Component {
 
     products_Index.title = e.target.value;
 
-    const products_Copy = [...this.state.products];
+    const products_Clone = [...this.state.products];
 
-    products_Copy[index] = products_Index;
+    products_Clone[index] = products_Index;
 
-    this.setState({ products_Copy });
+    this.setState({ products_Clone });
   };
 
   incroment_Handler = (id) => {
@@ -65,11 +65,11 @@ class App extends Component {
 
     products_Index.quantity++;
 
-    const products_Copy = [...this.state.products];
+    const products_Clone = [...this.state.products];
 
-    products_Copy[index] = products_Index;
+    products_Clone[index] = products_Index;
 
-    this.setState({ products_Copy });
+    this.setState({ products_Clone });
   };
 
   deccroment_Handler = (id) => {
@@ -78,17 +78,17 @@ class App extends Component {
     const products_Index = { ...this.state.products[index] };
 
     if (products_Index.quantity === 0) {
-      const filterd = this.state.products.filter((p) => p.id !== id);
+      const filterd_Id = this.state.products.filter((p) => p.id !== id);
 
-      this.setState({ products: filterd });
+      this.setState({ products: filterd_Id });
     } else {
-      const products_Copy = [...this.state.products];
+      const products_Clone = [...this.state.products];
 
       products_Index.quantity--;
 
-      products_Copy[index] = products_Index;
+      products_Clone[index] = products_Index;
 
-      this.setState({ products_Copy });
+      this.setState({ products_Clone });
     }
   };
 
