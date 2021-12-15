@@ -59,10 +59,6 @@ class App extends Component {
   };
 
   incroment_Handler = (id) => {
-    // let copy = [...this.state.products];
-    // let select_products = copy.find((x) => x.id === id);
-    // select_products.quantity++;
-    // this.setState({ copy });
     const index = this.state.products.findIndex((items) => items.id === id);
 
     const products_Index = { ...this.state.products[index] };
@@ -77,15 +73,6 @@ class App extends Component {
   };
 
   deccroment_Handler = (id) => {
-    // let copy = [...this.state.products];
-    // let find_products = copy.find((x) => x.id === id);
-    // if (find_products.quantity === 0) {
-    //   const filtered = copy.filter((x) => x.id !== id);
-    //   this.setState({ copy: filtered });
-    // } else {
-    //   find_products.quantity--;
-    //   this.setState({ copy });
-    // }
     const index = this.state.products.findIndex((x) => x.id === id);
 
     const products_Index = { ...this.state.products[index] };
