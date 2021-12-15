@@ -44,7 +44,7 @@ class App extends Component {
   ////////////// Also When the Quantity Reaches Zero Component Will Not Get Deleted //////////////
   //////////////////////////////// and imput Handler is not working //////////////////////////////
 
-  inputHandler = (e, id) => {
+  inputHandler = (e, id) => {              //<= this function is supposed to make a clone of title in the products array and shows input as title
     const index = this.state.products.findIndex((items) => items.id === id);
 
     const products_Index = { ...this.state.products[index] };
@@ -58,7 +58,8 @@ class App extends Component {
     this.setState({ products_Clone });
   };
 
-  incroment_Handler = (id) => {
+  incroment_Handler = (id) => {           //<= this function is supposed to make a clone of the products array and add one number to the quantity 
+    
     const index = this.state.products.findIndex((items) => items.id === id);
 
     const products_Index = { ...this.state.products[index] };
@@ -72,7 +73,7 @@ class App extends Component {
     this.setState({ products_Clone });
   };
 
-  deccroment_Handler = (id) => {
+  deccroment_Handler = (id) => {          //<= this function is supposed to make a clone of the products array and then decrement quantity number by a factor of one
     const index = this.state.products.findIndex((x) => x.id === id);
 
     const products_Index = { ...this.state.products[index] };
