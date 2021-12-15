@@ -1,0 +1,16 @@
+.navbar > h3 {
+  text-align: center;
+  align-items: center;
+}
+.navbar {
+  display: flex;
+  height: 20px;
+  width: 90%;
+  padding: 20px 20px;
+  border: 2px solid black;
+}
+.navbar > span {
+  display: flex;
+  margin-left: 470px;
+  font-size: large;
+}
