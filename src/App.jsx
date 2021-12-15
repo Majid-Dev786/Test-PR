@@ -51,11 +51,11 @@ class App extends Component {
 
     products_Index.title = e.target.value;
 
-    const products_copy = [...this.state.products];
+    const products_Copy = [...this.state.products];
 
-    products_copy[index] = products_Index;
+    products_Copy[index] = products_Index;
 
-    this.setState({ products_copy });
+    this.setState({ products_Copy });
   };
 
   incroment_Handler = (id) => {
@@ -69,11 +69,11 @@ class App extends Component {
 
     products_Index.quantity++;
 
-    const products_copy = [...this.state.products];
+    const products_Copy = [...this.state.products];
 
-    products_copy[index] = products_Index;
+    products_Copy[index] = products_Index;
 
-    this.setState({ products_copy });
+    this.setState({ products_Copy });
   };
 
   deccroment_Handler = (id) => {
@@ -95,13 +95,13 @@ class App extends Component {
 
       this.setState({ products: filterd });
     } else {
-      const products_copy = [...this.state.products];
+      const products_Copy = [...this.state.products];
 
       products_Index.quantity--;
 
-      products_copy[index] = products_Index;
+      products_Copy[index] = products_Index;
 
-      this.setState({ products_copy });
+      this.setState({ products_Copy });
     }
   };
 
