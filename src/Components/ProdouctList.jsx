@@ -8,7 +8,7 @@ export default class ProdouctList extends Component {
     return this.props.products.map((x, i) => {
       return (
         <Products
-          Change={(e) => this.imputHandler(e, x.id)}
+          Change={(e) => this.inputHandler(e, x.id)}
           onInc={() => this.props.onInc(x.id)}
           onDec={() => this.props.onDec(x.id)}
           onRemove={() => this.props.onRemove(x.id)}

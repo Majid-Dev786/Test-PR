@@ -44,7 +44,7 @@ class App extends Component {
   ////////////// Also When the Quantity Reaches Zero Component Will Not Get Deleted //////////////
   //////////////////////////////// and imput Handler is not working ////////////////////////////////
 
-  imputHandler = (e, id) => {
+  inputHandler = (e, id) => {
     const index = this.state.products.findIndex((items) => items.id === id);
 
     const products_Index = { ...this.state.products[index] };
@@ -128,7 +128,7 @@ class App extends Component {
         <ProdouctList
           products={this.state.products}
           onRemove={this.removeHadler}
-          Change={this.imputHandler}
+          Change={this.inputHandler}
           onInc={this.incroment_Handler}
           onDec={this.deccroment_Handler}
         />
