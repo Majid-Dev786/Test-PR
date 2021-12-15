@@ -115,7 +115,7 @@ class App extends Component {
         <ProdouctList
           products={this.state.products}
           onRemove={this.removeHadler}
-          Change={this.inputHandler}
+          change={this.inputHandler}
           onInc={this.incroment_Handler}
           onDec={this.deccroment_Handler}
         />
