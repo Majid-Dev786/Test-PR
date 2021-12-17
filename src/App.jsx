@@ -38,16 +38,11 @@ class App extends Component {
     const filterd_Id = this.state.products.filter((p) => p.id !== id);
     this.setState({ products: filterd_Id });
   };
-
-  ///////////////////////////////////// Problem is Probably Here /////////////////////////////////
-  ///////////////////////// increment and decrement Handler is not working ///////////////////////
-  ////////////// Also When the Quantity Reaches Zero Component Will Not Get Deleted //////////////
-  //////////////////////////////// and imput Handler is not working //////////////////////////////
-
-  inputHandler = (e, id) => {              //<= this function is supposed to make a clone of title in the products array and shows input as title
+  
+  inputHandler = (e, id) => {             
     const index = this.state.products.findIndex((items) => items.id === id);
 
-    const products_Index = this.state.products[index];
+    const products_Index = this.state.products[index]; // <= The problem was here with products_Index, it couldn't get the proper index because i shouldn't used the bracket and spread operator (...)        
 
     products_Index.title = e.target.value;
 
@@ -58,11 +53,11 @@ class App extends Component {
     this.setState({ products_Clone });
   };
 
-  incroment_Handler = (id) => {           //<= this function is supposed to make a clone of the products array and add one number to the quantity 
+  incroment_Handler = (id) => {   
     
     const index = this.state.products.findIndex((items) => items.id === id);
 
-    const products_Index = this.state.products[index] ;
+    const products_Index = this.state.products[index]; // <= alse same problem here
 
     products_Index.quantity++;
 
@@ -73,11 +68,11 @@ class App extends Component {
     this.setState({ products_Clone });
   };
 
-  deccroment_Handler = (id) => {          //<= this function is supposed to make a clone of the products array and then decrement quantity number by a factor of one
+  deccroment_Handler = (id) => {         
     const index = this.state.products.findIndex((x) => x.id === id);
 
-    const products_Index = this.state.products[index];
-
+    const products_Index = this.state.products[index]; //<= and same problem agin
+    
     if (products_Index.quantity === 0) {
       const filterd_Id = this.state.products.filter((p) => p.id !== id);
 
@@ -92,9 +87,6 @@ class App extends Component {
       this.setState({ products_Clone });
     }
   };
-
-  ////////////////////////////////////////////////////////////////////////////////////////////////
-  ////////////////////////////////////////////////////////////////////////////////////////////////
   componentDidMount() {
     console.log("componentDidMount");
   }
