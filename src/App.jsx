@@ -47,7 +47,7 @@ class App extends Component {
   inputHandler = (e, id) => {              //<= this function is supposed to make a clone of title in the products array and shows input as title
     const index = this.state.products.findIndex((items) => items.id === id);
 
-    const products_Index = { ...this.state.products[index] };
+    const products_Index = this.state.products[index];
 
     products_Index.title = e.target.value;
 
@@ -62,7 +62,7 @@ class App extends Component {
     
     const index = this.state.products.findIndex((items) => items.id === id);
 
-    const products_Index = { ...this.state.products[index] };
+    const products_Index = this.state.products[index] ;
 
     products_Index.quantity++;
 
@@ -76,7 +76,7 @@ class App extends Component {
   deccroment_Handler = (id) => {          //<= this function is supposed to make a clone of the products array and then decrement quantity number by a factor of one
     const index = this.state.products.findIndex((x) => x.id === id);
 
-    const products_Index = { ...this.state.products[index] };
+    const products_Index = this.state.products[index];
 
     if (products_Index.quantity === 0) {
       const filterd_Id = this.state.products.filter((p) => p.id !== id);
